@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="Pasindu Madushanka, software engineer, portfolio, web developer, mobile developer, Sri Lanka, full stack">
+<meta name="author" content="Pasindu Madushanka">
+    <title>pasindu Madushanka | software Engineer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    
+    <!-- connect css file -->
+       <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+       <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css"> 
+    <link rel="stylesheet" href="services.css">
+    <link rel="stylesheet" href="theme.css">
+</head>
+<body>
+<header>
+        <nav>
+            <div class="logo">
+                <a href="#home">My<span>Portfolio</span></a>
+            </div>
+            
+
+            <!-- HAMBURGER ICON එක මෙතනට දාන්න -->
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                 <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#services">services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+                 <button id="theme-toggle" class="theme-btn">
+                 <i class="fa fa-moon"></i>
+          </button>
+        </nav>
+    </header>
+
+    <main>
+    <section id="home" class="hero-section">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 data-aos="fade-up">I'am Pasindu</h1>
+                 <h3 data-aos="fade-up" data-aos-delay="200">I am <span id="type-text"></span></h3>
+                <p data-aos="fade-up" data-aos-delay="400">
+                    I’m a passionate final-year Software Engineering student at Cardiff Metropolitan University, skilled in full-stack and mobile app development.
+                     I enjoy transforming ideas into clean, efficient, and user-focused digital solutions that connect creativity with technology.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#contact" class="btn btn-primary">Contact me</a>
+                    <a href="d:\portifolio\photo\Simple Professional CV Resume (2) (1).pdf" class="btn btn-secondary" download>Download CV</a>
+                </div>
+            </div>
+            <div class="hero-image" data-aos="fade-left" data-aos-delay="800">
+                <img src="photo/pasiya.jpeg" alt="A photo of pasindu">
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about-section">
+    <div class="about-container">
+        <!-- Section Header -->
+        <div class="section-header" data-aos="fade-up">
+            <h2>About <span>Me</span></h2>
+            <p class="section-description">Get to know more about my skills and background.</p>
+        </div>
+        
+        <!-- Grid for content -->
+        <div class="about-grid">
+            <!-- Left Column: Biography -->
+            <div class="about-bio" data-aos="fade-right">
+                <h3>Software Developer & BSc Student</h3>
+                <p>
+                    I am a passionate software developer and a final-year BSc student with a strong foundation in modern web technologies. I love crafting dynamic websites and applications. Beyond coding, I have a keen eye for photography, capturing moments that tell a story. My technical knowledge combined with a creative vision allows me to build engaging digital experiences.
+                </p>
+            </div>
+
+            <!-- Right Column: Key Information -->
+            <div class="personal-info" data-aos="fade-left" data-aos-delay="200">
+                <ul>
+                    <li><span class="info-label">Education:</span> <span class="info-value">Bachelor of Science in software Engineering(Present)</span></li>
+                    <li><span class="info-label">Location:</span> <span class="info-value">kandy, Sri Lanka</span></li>
+                    <li><span class="info-label">Languages:</span> <span class="info-value">Sinhala, English</span></li>
+                    <li><span class="info-label">Email:</span> <span class="info-value">icbtkandycampus@gmail.com</span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ========================
+       PORTFOLIO SHOWCASE
+   ======================== -->
+<section id="portfolio" class="portfolio-section">
+    <div class="container">
+        <!-- Section Header -->
+        <div class="section-header" data-aos="fade-up">
+            <h2>Portfolio <span>Showcase</span></h2>
+            <p class="section-description">Explore my journey through projects, certifications, and technical expertise.</p>
+        </div>
+
+        <!-- Tab Buttons -->
+        <div class="portfolio-tabs" data-aos="fade-up" data-aos-delay="200">
+            <button class="tab-btn active" data-target="projects-panel">
+                <i class="fas fa-project-diagram"></i> Projects
+            </button>
+            <button class="tab-btn" data-target="certificates-panel">
+                <i class="fas fa-certificate"></i> Certificates
+            </button>
+            <button class="tab-btn" data-target="tech-stack-panel">
+                <i class="fas fa-cogs"></i> Tech Stack
+            </button>
+        </div>
+
+        <!-- Tab Content Panels -->
+        <div class="portfolio-content">
+
+            <!-- Projects Panel -->
+            <div class="tab-panel active" id="projects-panel">
+                <div class="projects-grid">
+                    
+                    <!-- Project Card 1 (උදාහරණයක්) -->
+                    <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+                        <video autoplay muted loop class="background-video">
+                            <source src="d:\portifolio\photo\Recording 2025-08-25 113703.mp4" type="video/mp4">
+                            your browser does not support the video tag.
+                        </video>
+                        <div class="project-content">
+                            <h3>LuxeVista</h3>
+                            <p>A mobile application for a luxury resort, featuring user authentication, booking, and other services.</p>
+                            <div class="project-tech-stack"><span>androidstudio </span><span> java</span></div>
+                            <div class="project-links"><a href="#" class="btn btn-primary">Live Demo</a><a href="#" class="btn btn-secondary">View Code</a></div>
+                        </div>
+                    </div>
+                     <!-- Project Card 2 -->
+                    <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+                         <video autoplay muted loop class="background-video">
+            
+            <source src="d:\portifolio\photo\Recording1.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+                         <div class="project-content">
+                             <h3>wellness center</h3>
+                             <p>An online platform to connect admin,therapiest with consumers.</p>
+                             <div class="project-tech-stack"><span>html css javascript</span><span>php xammp sqlite</span></div>
+                             <div class="project-links"><a href="#" class="btn btn-primary">Live Demo</a><a href="#" class="btn btn-secondary">View Code</a></div>
+                         </div>
+                    </div>
+                   
+                     <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+                         <video autoplay muted loop class="background-video">
+            <!-- video(project) -->
+            <source src="c:\Users\pasin\Videos\Screen Recordings\soc.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+                         <div class="project-content">
+                             <h3>GadgetHub</h3>
+                             <p>A SOC prooject</p>
+                             <div class="project-tech-stack"><span>.Net framework</span><span>C# sqlite</span></div>
+                             <div class="project-links"><a href="#" class="btn btn-primary">Live Demo</a><a href="#" class="btn btn-secondary">View Code</a></div>
+                         </div>
+                    </div>
+
+                    <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+                         <video autoplay muted loop class="background-video">
+            
+            <source src="d:\portifolio\photo\gym4.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+                         <div class="project-content">
+                             <h3>Gym Perfect</h3>
+                             <p>A Gym management system admin and staff can hadle members payment and progress ect. Have client web interface.</p>
+                             <div class="project-tech-stack"><span>html, css, javascript,Boostrap</span><span>php xammp sqlite</span></div>
+                             <div class="project-links"><a href="#" class="btn btn-primary">Live Demo</a><a href="#" class="btn btn-secondary">View Code</a></div>
+                         </div>
+                    </div>
+                     <!-- තව project cards මෙතනට එකතු කරන්න -->
+                </div>
+            </div>
+
+            <!-- Certificates Panel -->
+            <div class="tab-panel" id="certificates-panel">
+                <div class="certificates-grid">
+                    <!-- add certificate images here -->
+                    <div class="certificate-card" data-aos="fade-up"><img src="d:\portifolio\photo\Screenshot 2025-08-16 122146.png" alt="Certificate 1"></div>
+                    <div class="certificate-card" data-aos="fade-up" data-aos-delay="100"><img src="d:\portifolio\photo\Screenshot 2025-08-16 130325.png" alt="Certificate 2"></div>
+                    <div class="certificate-card" data-aos="fade-up" data-aos-delay="200"><img src="d:\portifolio\photo\sql.png" alt="Certificate 3"></div>
+                    
+                </div>
+            </div>
+
+            <!-- Tech Stack Panel -->
+            <div class="tab-panel" id="tech-stack-panel">
+                <div class="skills-grid">
+                    <!-- my skill-card here -->
+                    <div class="skill-card" data-aos="fade-up" data-aos-delay="100"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React"><p>React</p></div>
+                    <div class="skill-card" data-aos="fade-up" data-aos-delay="200"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript"><p>JavaScript</p></div>
+                    <div class="skill-card" data-aos="fade-up" data-aos-delay="300"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js"><p>Node.js</p></div>
+                    <div class="skill-card" data-aos="fade-up" data-aos-delay="400"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5"><p>HTML5</p></div>
+                    <div class="skill-card" data-aos="fade-up" data-aos-delay="500"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3"><p>CSS3</p></div>
+                    <div class="skill-card" data-aos="fade-up" data-aos-delay="600"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original-wordmark.svg" alt="MongoDB"><p>MongoDB</p></div>
+                    <div class="skill-card" data-aos="fade-up" data-aos-delay="700"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java"><p>Java</p></div>
+                    <div class="skill-card" data-aos="fade-up" data-aos-delay="800"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" alt="PHP"><p>PHP</p></div>
+                    <div class="skill-card" data-aos="fade-up" data-aos-delay="900"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" alt="Figma"><p>Figma</p></div>    
+                    <div class="skill-card" data-aos="fade-up" data-aos-delay="1000"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg" alt="C# Icon"><p>C#</p></div>
+                    <div class="skill-card" data-aos="fade-up" data-aos-delay="1100"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" alt="C++ Icon"><p>C++</p></div>
+                    <div class="skill-card" data-aos="fade-up" data-aos-delay="1200"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original-wordmark.svg" alt="MySQL Icon"><p>MySQL</p></div>
+                    <div class="skill-card" data-aos="fade-up" data-aos-delay="1300"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain-wordmark.svg" alt="Firebase Icon"><p>Firebase</p></div>
+                    <div class="skill-card" data-aos="fade-up" data-aos-delay="1400"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/androidstudio/androidstudio-original.svg" alt="Android Studio Icon"><p>Android Studio</p></div>
+                    <div class="skill-card" data-aos="fade-up" data-aos-delay="1500"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg" alt="Flutter Icon"><p>Flutter</p></div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!--services section-->
+<section id="services" class="services-section">
+  <div class="services-container">
+    <div class="section-header" data-aos="fade-up">
+      <h2>My <span>Services</span></h2>
+      <p class="section-description">What I can do for you as a Software Engineer</p>
+    </div>
+
+    <div class="services-grid">
+      <div class="service-card" data-aos="zoom-in" data-aos-delay="100">
+        <i class="fa fa-code service-icon"></i>
+        <h3>Web Development</h3>
+        <p>Designing and developing responsive, high-performance web applications using HTML, CSS, and JavaScript.</p>
+      </div>
+
+      <div class="service-card" data-aos="zoom-in" data-aos-delay="200">
+        <i class="fa fa-mobile-alt service-icon"></i>
+        <h3>Mobile App Development</h3>
+        <p>Building smooth, interactive mobile apps with modern UI and optimal user experience.</p>
+      </div>
+
+      <div class="service-card" data-aos="zoom-in" data-aos-delay="300">
+        <i class="fa fa-database service-icon"></i>
+        <h3>Database Integration</h3>
+        <p>Designing and connecting secure databases to power your web or mobile applications.</p>
+      </div>
+
+      <div class="service-card" data-aos="zoom-in" data-aos-delay="400">
+        <i class="fa fa-pencil-ruler service-icon"></i>
+        <h3>UI/UX Design</h3>
+        <p>Creating modern, user-friendly interfaces with attention to detail and design principles.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================================================
+       TESTIMONIALS SECTION (CORRECTED HTML STRUCTURE)
+   =================================================== -->
+<section id="testimonials" class="testimonials-section">
+    <div class="container">
+        <!-- Section Header -->
+        <div class="section-header" data-aos="fade-up">
+            <h2>What My <span>Clients Say</span></h2>
+            <p class="section-description">Here are some testimonials from people I've worked with.</p>
+        </div>
+
+        <!-- !! වැදගත්ම වෙනස්කම මෙතන !! -->
+        <!-- Slider සහ Arrows දෙකම ඇතුළත් වෙන අලුත් container එකක් -->
+        <div class="slider-container" data-aos="fade-up" data-aos-delay="200">
+        
+            <!-- Swiper Slider -->
+            <div class="swiper testimonials-slider">
+                <div class="swiper-wrapper">
+                    
+                    <!-- Slide 1 -->
+                    <div class="swiper-slide">
+                        <div class="testimonial-card">
+                            <div class="testimonial-header">
+                                <img src="https://i.pravatar.cc/100?img=1" alt="Client 1" class="client-avatar">
+                                <div class="client-info">
+                                    <h4 class="client-name">John Doe</h4>
+                                    <p class="client-title">CEO at TechCorp</p>
+                                </div>
+                            </div>
+                            <div class="testimonial-body">
+                                <p class="testimonial-text">"Pasindu is a highly skilled developer who delivered exceptional results. His attention to detail and commitment to the project were outstanding. Highly recommended!"</p>
+                            </div>
+                            <div class="testimonial-footer">
+                                <div class="star-rating">
+                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 2 -->
+                    <div class="swiper-slide">
+                        <div class="testimonial-card">
+                            <div class="testimonial-header">
+                                <img src="https://i.pravatar.cc/100?img=5" alt="Client 2" class="client-avatar">
+                                <div class="client-info">
+                                    <h4 class="client-name">Jane Smith</h4>
+                                    <p class="client-title">Project Manager at Creative Solutions</p>
+                                </div>
+                            </div>
+                            <div class="testimonial-body">
+                                <p class="testimonial-text">"Working with Pasindu was a pleasure. He is a great communicator and a talented developer. The final product exceeded our expectations."</p>
+                            </div>
+                            <div class="testimonial-footer">
+                                <div class="star-rating">
+                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 3 -->
+                    <div class="swiper-slide">
+                        <div class="testimonial-card">
+                             <div class="testimonial-header">
+                                <img src="https://i.pravatar.cc/100?img=8" alt="Client 3" class="client-avatar">
+                                <div class="client-info">
+                                    <h4 class="client-name">Samuel Lee</h4>
+                                    <p class="client-title">Founder of Innovate Hub</p>
+                                </div>
+                            </div>
+                            <div class="testimonial-body">
+                                <p class="testimonial-text">"His problem-solving skills and creativity are top-notch. He was able to turn our complex ideas into a functional and beautiful website."</p>
+                            </div>
+                            <div class="testimonial-footer">
+                                 <div class="star-rating">
+                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Pagination එක Swiper එක ඇතුළේම තියෙනවා -->
+                <div class="swiper-pagination"></div>
+            </div>
+
+            <!-- !! Arrows ටික Swiper එකෙන් එළියට ගත්තා !! -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+
+    </div>
+</section>
+
+<section id="contact" class="contact-section">
+    <div class="container">
+        <!-- Section Header -->
+        <div class="section-header" data-aos="fade-up">
+            <h2>Get In <span>Touch</span></h2>
+            <p class="section-description">I'm currently available for freelance work and open to new opportunities. Feel free to reach out!</p>
+        </div>
+
+        <div class="contact-grid">
+
+            <!-- වම් තීරුව: Direct Channels -->
+            <div class="contact-details-left" data-aos="fade-right">
+                <h3>Direct Channels</h3>
+                <p>Feel free to use one of these direct channels. I'll get back to you as soon as possible.</p>
+                <div class="direct-contact-links">
+                    <a href="mailto:pasindumadu378@gmail.com" class="btn btn-primary">
+                        <i class="fas fa-envelope"></i> Email Me
+                    </a>
+                    <a href="https://wa.me/94789701351" class="btn btn-primary" target="_blank">
+                        <i class="fab fa-whatsapp"></i> Chat on WhatsApp
+                    </a>
+                    <a href="https://www.linkedin.com/in/pasindu-madushanka-8b10b536b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" class="btn btn-secondary" target="_blank">
+                        <i class="fab fa-linkedin"></i> Connect on LinkedIn
+                    </a>
+                </div>
+            </div>
+
+            <!-- දකුණු තීරුව: Send a Message Form -->
+            <div class="contact-form-right" data-aos="fade-left" data-aos-delay="200">
+                <h3>Send Me a Message</h3>
+                <form id="contact-form" action="https://formspree.io/f/myzpvqqp" method="POST">
+                    <div class="input-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="email">Your Email</label>
+                        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" name="subject" placeholder="What is this about?">
+                    </div>
+                    <div class="input-group">
+                        <label for="message">Your Message</label>
+                        <textarea id="message" name="message" rows="5" placeholder="Write your message here..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</section>
+</main>
+<footer>
+    <p>Copyright © 2025 by Pasindu Madushanka | All Rights Reserved.</p>
+</footer>
+
+  <!-- LIBRARY SCRIPTS -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script> <!-- !! මෙන්න එකතු කරන්න ඕන ලින්ක් එක !! -->
+
+    <!-- YOUR MAIN SCRIPT FILE -->
+    <script src="main.js"></script>
+
+
+</body>
+</html>
