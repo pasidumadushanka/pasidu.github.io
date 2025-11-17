@@ -153,7 +153,7 @@ nav {
     grid-template-columns: 1fr 1fr;
     align-items: center;
     gap: 50px;
-    max-width: 1200px;
+    max-width: 1300px;
     margin: 0 auto;
     padding: 0 20px;
 }
@@ -181,13 +181,83 @@ nav {
     display: flex;
     gap: 15px;
 }
+/* Quick Stats Section */
+.quick-stats {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* අයිතම මධ්‍යගත කිරීමට */
+    gap: 40px 40px; /* අයිතම අතර තිරස් සහ සිරස් ඉඩ */
+    margin-top: 40px; /* ඉහළින් ඇති අංග වලින් ඉඩ */
+    padding-top: 40px; /* ඉහළ මායිම් රේඛාවට ඉහළින් ඇති ඉඩ */
+    border-top: 1px solid var(--secondary-bg); /* ඔබගේ secondary-bg වර්ණයට ගැලපෙන මායිම් රේඛාවක් */
+    text-align: center; /* සියලුම stats මධ්‍යගත කිරීමට */
+}
 
+.stat-item {
+    display: flex;
+    flex-direction: column; /* අයිතම සිරස් අතට (අයිකනය, අංකය, text) පෙළගැස්වීමට */
+    align-items: center; /* සිරස් අතට පෙළගැස්වූ විට අයිතම තිරස් අතට මධ්‍යගත කිරීමට */
+    gap: 5px; /* අයිකනය, අංකය සහ text අතර ඉඩ අඩු කිරීමට */
+    font-size: 1em; /* සංඛ්‍යාලේඛන text සඳහා මූලික font ප්‍රමාණය */
+    color: var(--quick-stat-text-color); /* සංඛ්‍යාලේඛන text සඳහා තරමක් අඳුරු වර්ණයක් */
+    flex: 1; /* සියලුම stat-item වලට සමාන ඉඩක් ලබා දීමට */
+    min-width: 120px; /* අයිතම ඉතා කුඩා වීම වැළැක්වීමට */
+    max-width: 200px; /* විශාල තිර වලදී අයිතම අධික ලෙස පැතිරීම වැළැක්වීමට */
+}
+
+.stat-item i {
+    color: var(--highlight-color); /* අයිකන සඳහා ඔබගේ highlight වර්ණය */
+    font-size: 1.4em; /* අයිකන වල විශාලත්වය */
+    margin-bottom: 5px; /* අයිකනයට පහළින් කුඩා ඉඩක් */
+}
+
+.stat-item span {
+    display: block; /* span එක block element එකක් ලෙස සලකන්න */
+    text-align: center; /* text එක මධ්‍යගත කිරීමට */
+    line-height: 1.2; /* text පේළි අතර ඉඩ */
+}
+
+.stat-number {
+    font-size: 2em; /* අංක වල ප්‍රමාණය වැඩි කිරීමට (screenshot එකට සමාන වීමට) */
+    font-weight: bold; /* අංක වඩාත් තද කිරීමට */
+    color: #8323a0; /* screenshot එකේ පෙන්වන තැඹිලි වර්ණය */
+    display: block; /* අංකය වෙනම පේළියක පෙන්වීමට */
+    margin-bottom: 5px; /* අංකයට පහළින් කුඩා ඉඩක් */
+}
+
+/* Quick Stats සඳහා ප්‍රතිචාරාත්මක ගැලපීම් */
+@media (max-width: 768px) {
+    .quick-stats {
+        gap: 20px; /* කුඩා තිර වලදී ඉඩ අඩු කිරීමට */
+    }
+    .stat-item {
+        min-width: unset; /* කුඩා තිර වලදී min-width ඉවත් කරන්න */
+        max-width: 45%; /* තිරයේ පළලෙන් 45% ක් ගැනීමට (දෙකක් එක පේළියක) */
+    }
+    .stat-number {
+        font-size: 1.8em; /* කුඩා තිර වලදී අංක වල ප්‍රමාණය ටිකක් අඩු කිරීමට */
+    }
+}
+
+@media (max-width: 480px) {
+    .quick-stats {
+        flex-direction: column; /* ඉතා කුඩා තිර වලදී සියලුම සංඛ්‍යාලේඛන සිරස් අතට ගොඩගැසීමට */
+        align-items: center; /* මධ්‍යගත කිරීමට */
+        gap: 25px; /* සිරස් අතට ගොඩගැසූ විට ඉඩ වැඩි කිරීමට */
+    }
+    .stat-item {
+        max-width: 80%; /* ඉතා කුඩා තිර වලදී වැඩි පළලක් ගැනීමට */
+    }
+    .stat-number {
+        font-size: 1.5em; /* ඉතා කුඩා තිර වලදී තවදුරටත් අඩු කිරීමට */
+    }
+}
 .hero-image {
     text-align: center;
 }
 
 .hero-image img {
-    max-width: 400px;
+    max-width: 340px;
     width: 100%;
     border-radius: 50%;
     border: 5px solid var(--primary-color);
@@ -321,27 +391,144 @@ nav {
 }
 
 /* Project Cards (මේක කලින් තිබ්බ එකමයි, ඒත් මෙතනට දැම්මා) */
+/* ================== PROJECTS SECTION NEW STYLES ================== */
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 40px;
 }
-.project-card img,
-.project-card video {
+.project-card {
+    background-color: var(--surface-color);
+    border-radius: 12px;
+    overflow: hidden; /* Contents card එකෙන් එළියට නොයන්න */
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex; /* Content එක flex කරන්න */
+    flex-direction: column; /* උඩින් media, යටින් content */
+    height: 100%; /* සියලු cards වලට එකම උසක් දෙන්න */
+}
+
+.project-card:hover {
+    transform: translateY(-8px); /* Hover කරද්දී පොඩ්ඩක් උඩට එන්න */
+    box-shadow: 0 8px 25px rgba(138, 43, 226, 0.4); /* Primary color එකෙන් shadow එකක් */
+}
+
+.project-media {
     width: 100%;
-    height: 300px; /* හැම frame එකකටම එකම උසක් දෙනවා */
-    object-fit: cover; /* පින්තූරය/වීඩියෝව කොටුවට හරියටම fit කරනවා */
-    display: block; /* අනවශ්‍ය κενά (gaps) අයින් කරන්න */
-    border-bottom: 3px solid var(--border-color); /* frame එකයි content එකයි වෙන් කරන්න පොඩි ඉරක් */
+    height: 220px; /* Video/Image height */
+    overflow: hidden;
+    position: relative; /* Inside content positioning */
+}
+
+.project-media video,
+.project-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Aspect ratio එක maintain කරලා cover කරන්න */
+    display: block;
     transition: transform 0.4s ease;
 }
 
-.project-card:hover img,
-.project-card:hover video {
-    transform: scale(1.05); /* Hover කරද්දී පොඩ්ඩක් ලොකු වෙන animation එක */
+.project-card:hover .project-media video,
+.project-card:hover .project-media img {
+    transform: scale(1.08); /* Hover කරද්දී media එක පොඩ්ඩක් zoom වෙන්න */
 }
-/* (ඔයාගේ පරණ .project-card styles ටික මෙතනට දාන්නත් පුළුවන්, නැත්නම් ඒක වෙනම තියන්න) */
 
+.project-content {
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Card එකේ ඉතිරි ඉඩ ගන්න */
+}
+
+.project-content h3 {
+    font-size: 1.7rem;
+    color: var(--text-color);
+    margin-bottom: 10px;
+    line-height: 1.3;
+}
+
+.project-content p {
+    font-size: 0.95rem;
+    color: var(--text-color-muted);
+    margin-bottom: 20px;
+    flex-grow: 1; /* Description එකට ඉඩ දෙන්න */
+}
+
+.project-tech-icons {
+    margin-top: auto; /* Buttons වලට උඩින්ම තියන්න */
+    margin-bottom: 20px;
+    display: flex;
+    flex-wrap: wrap; /* Icons ගොඩක් තිබ්බොත් අලුත් පේළියකට යන්න */
+    gap: 12px; /* Icons අතර ඉඩ */
+}
+
+.project-tech-icons i {
+    font-size: 2.2rem; /* Icon size */
+    color: var(--text-color-muted); /* Default icon color */
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.project-tech-icons i:hover {
+    transform: translateY(-3px) scale(1.1); /* Hover කරද්දී පොඩ්ඩක් උඩට ඇවිත් ලොකු වෙන්න */
+    color: var(--primary-color); /* Hover color for icons */
+}
+
+.project-links {
+    display: flex;
+    gap: 15px;
+    margin-top: 15px; /* Tech icons වලට යටින් ඉඩක් */
+}
+
+.project-links .btn {
+    flex: 1; /* Buttons දෙකටම එකම පළල දෙන්න */
+    font-size: 0.95rem;
+    padding: 10px 15px;
+}
+
+/* ================== RESPONSIVE DESIGN FOR PROJECT CARDS ================== */
+@media (max-width: 768px) {
+    .projects-grid {
+        grid-template-columns: 1fr; /* Mobile වලදී හැම card එකක්ම එක පේලියට */
+        gap: 30px;
+    }
+
+    .project-content h3 {
+        font-size: 1.5rem;
+    }
+
+    .project-content p {
+        font-size: 0.9rem;
+    }
+
+    .project-links .btn {
+        font-size: 0.85rem;
+        padding: 10px 12px;
+    }
+
+    .project-media {
+        height: 200px; /* Mobile වලදී video/image height අඩු කරන්න */
+    }
+}
+
+@media (max-width: 480px) {
+    .project-content {
+        padding: 20px;
+    }
+    .project-content h3 {
+        font-size: 1.3rem;
+    }
+    .project-tech-icons i {
+        font-size: 1.8rem;
+    }
+    .project-links {
+        flex-direction: column; /* Buttons mobile වලදී එකකට යටින් එකක් */
+    }
+    .project-links .btn {
+        width: 100%;
+        text-align: center;
+    }
+}
 
 /* Certificate Grid */
 .certificates-grid {

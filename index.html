@@ -6,13 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="keywords" content="Pasindu Madushanka, software engineer, portfolio, web developer, mobile developer, Sri Lanka, full stack">
 <meta name="author" content="Pasindu Madushanka">
-    <title>pasindu Madushanka | software Engineer</title>
+    <title>pasindu Madushanka|software Engineer</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
     
     <!-- connect css file -->
        <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
        <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+       <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
     <link rel="stylesheet" href="style.css"> 
     <link rel="stylesheet" href="services.css">
     <link rel="stylesheet" href="theme.css">
@@ -25,13 +26,19 @@
             </div>
             
 
-            <!-- HAMBURGER ICON එක මෙතනට දාන්න -->
+            <!-- HAMBURGER ICON -->
+             <!-- Wrapper for Hamburger and Theme Toggle -->
+            <div class="hamburger-and-theme-wrapper">
+                <button id="theme-toggle" class="theme-btn">
+                    <i class="fa fa-moon"></i>
+                </button>
             <div class="hamburger">
                 <span class="bar"></span>
                 <span class="bar"></span>
                  <span class="bar"></span>
                 <span class="bar"></span>
                 <span class="bar"></span>
+            </div>
             </div>
 
             <ul class="nav-links">
@@ -41,9 +48,6 @@
                 <li><a href="#services">services</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
-                 <button id="theme-toggle" class="theme-btn">
-                 <i class="fa fa-moon"></i>
-          </button>
         </nav>
     </header>
 
@@ -51,7 +55,7 @@
     <section id="home" class="hero-section">
         <div class="hero-container">
             <div class="hero-content">
-                <h1 data-aos="fade-up">I'am Pasindu</h1>
+                <h1 data-aos="fade-up">I am Pasindu</h1>
                  <h3 data-aos="fade-up" data-aos-delay="200">I am <span id="type-text"></span></h3>
                 <p data-aos="fade-up" data-aos-delay="400">
                     I’m a passionate final-year Software Engineering student at Cardiff Metropolitan University, skilled in full-stack and mobile app development.
@@ -59,8 +63,22 @@
                 </p>
                 <div class="hero-buttons">
                     <a href="#contact" class="btn btn-primary">Contact me</a>
-                    <a href="d:\portifolio\photo\Simple Professional CV Resume (2) (1).pdf" class="btn btn-secondary" download>Download CV</a>
+                    <a href="photo/Simple Professional CV Resume (2) (1).pdf" class="btn btn-secondary" download>Download CV</a>
                 </div>
+                <div class="quick-stats"data-aos="fade-up">
+                <div class="stat-item">
+                    <i class="fas fa-history"></i>
+                    <span><span class="stat-number">3+</span> Years Education</span>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-project-diagram"></i>
+                  <span><span class="stat-number">20+</span> Projects Completed</span>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-star"></i>
+                    <span><span class="stat-number">100%</span> Client Satisfaction</span>
+                </div>
+            </div>
             </div>
             <div class="hero-image" data-aos="fade-left" data-aos-delay="800">
                 <img src="photo/pasiya.jpeg" alt="A photo of pasindu">
@@ -127,65 +145,106 @@
         <div class="portfolio-content">
 
             <!-- Projects Panel -->
-            <div class="tab-panel active" id="projects-panel">
+         <div class="tab-panel active" id="projects-panel">
                 <div class="projects-grid">
                     
-                    <!-- Project Card 1 (උදාහරණයක්) -->
+                    <!-- Project Card 1: LuxeVista -->
                     <div class="project-card" data-aos="fade-up" data-aos-delay="100">
-                        <video autoplay muted loop class="background-video">
-                            <source src="d:\portifolio\photo\Recording 2025-08-25 113703.mp4" type="video/mp4">
-                            your browser does not support the video tag.
-                        </video>
+                        <div class="project-media">
+                            <video autoplay muted loop playsinline>
+                                <source src="https://res.cloudinary.com/ddykxl9pe/video/upload/v1762666435/app_gipylb.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
                         <div class="project-content">
                             <h3>LuxeVista</h3>
                             <p>A mobile application for a luxury resort, featuring user authentication, booking, and other services.</p>
-                            <div class="project-tech-stack"><span>androidstudio </span><span> java</span></div>
-                            <div class="project-links"><a href="#" class="btn btn-primary">Live Demo</a><a href="#" class="btn btn-secondary">View Code</a></div>
+                            <div class="project-tech-icons">
+                                <i class="devicon-androidstudio-plain colored"></i>
+                                <i class="devicon-java-plain colored"></i>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" class="btn btn-primary">Live Demo</a>
+                                <a href="#" class="btn btn-secondary">View Code</a>
+                            </div>
                         </div>
                     </div>
-                     <!-- Project Card 2 -->
+
+                    <!-- Project Card 2: Wellness Center -->
                     <div class="project-card" data-aos="fade-up" data-aos-delay="200">
-                         <video autoplay muted loop class="background-video">
-            
-            <source src="d:\portifolio\photo\Recording1.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-                         <div class="project-content">
-                             <h3>wellness center</h3>
-                             <p>An online platform to connect admin,therapiest with consumers.</p>
-                             <div class="project-tech-stack"><span>html css javascript</span><span>php xammp sqlite</span></div>
-                             <div class="project-links"><a href="#" class="btn btn-primary">Live Demo</a><a href="#" class="btn btn-secondary">View Code</a></div>
-                         </div>
+                        <div class="project-media">
+                            <video autoplay muted loop playsinline>
+                                <source src="https://res.cloudinary.com/ddykxl9pe/video/upload/v1762666506/Recording1_xefeeh.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                        <div class="project-content">
+                            <h3>Wellness Center</h3>
+                            <p>An online platform to connect admin, therapist with consumers.</p>
+                            <div class="project-tech-icons">
+                                <i class="devicon-html5-plain colored"></i>
+                                <i class="devicon-css3-plain colored"></i>
+                                <i class="devicon-javascript-plain colored"></i>
+                                <i class="devicon-php-plain colored"></i>
+                                <i class="devicon-apache-plain colored"></i> <!-- XAMPP වෙනුවට Apache -->
+                                <i class="devicon-sqlite-plain colored"></i>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" class="btn btn-primary">Live Demo</a>
+                                <a href="#" class="btn btn-secondary">View Code</a>
+                            </div>
+                        </div>
                     </div>
                    
-                     <div class="project-card" data-aos="fade-up" data-aos-delay="200">
-                         <video autoplay muted loop class="background-video">
-            <!-- video(project) -->
-            <source src="c:\Users\pasin\Videos\Screen Recordings\soc.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-                         <div class="project-content">
-                             <h3>GadgetHub</h3>
-                             <p>A SOC prooject</p>
-                             <div class="project-tech-stack"><span>.Net framework</span><span>C# sqlite</span></div>
-                             <div class="project-links"><a href="#" class="btn btn-primary">Live Demo</a><a href="#" class="btn btn-secondary">View Code</a></div>
-                         </div>
+                    <!-- Project Card 3: GadgetHub (SOC Project) -->
+                    <div class="project-card" data-aos="fade-up" data-aos-delay="300">
+                        <div class="project-media">
+                            <video autoplay muted loop playsinline>
+                                <source src="https://res.cloudinary.com/ddykxl9pe/video/upload/v1763397715/soc_vzklh6.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                        <div class="project-content">
+                            <h3>GadgetHub (SOC Project)</h3>
+                            <p>A Security Operations Center (SOC) project for monitoring and managing security events.</p>
+                            <div class="project-tech-icons">
+                                <i class="devicon-dotnetcore-plain colored"></i>
+                                <i class="devicon-csharp-plain colored"></i>
+                                <i class="devicon-sqlite-plain colored"></i>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" class="btn btn-primary">Live Demo</a>
+                                <a href="#" class="btn btn-secondary">View Code</a>
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="project-card" data-aos="fade-up" data-aos-delay="200">
-                         <video autoplay muted loop class="background-video">
-            
-            <source src="d:\portifolio\photo\gym4.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-                         <div class="project-content">
-                             <h3>Gym Perfect</h3>
-                             <p>A Gym management system admin and staff can hadle members payment and progress ect. Have client web interface.</p>
-                             <div class="project-tech-stack"><span>html, css, javascript,Boostrap</span><span>php xammp sqlite</span></div>
-                             <div class="project-links"><a href="#" class="btn btn-primary">Live Demo</a><a href="#" class="btn btn-secondary">View Code</a></div>
-                         </div>
+                    <!-- Project Card 4: Gym Perfect -->
+                    <div class="project-card" data-aos="fade-up" data-aos-delay="400">
+                        <div class="project-media">
+                            <video autoplay muted loop playsinline>
+                                <source src="https://res.cloudinary.com/ddykxl9pe/video/upload/v1763398848/Video_Project_1_jupew2.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                        <div class="project-content">
+                            <h3>Gym Perfect</h3>
+                            <p>A Gym management system where admin and staff can handle member payments and progress. Includes a client web interface.</p>
+                            <div class="project-tech-icons">
+                                <i class="devicon-html5-plain colored"></i>
+                                <i class="devicon-css3-plain colored"></i>
+                                <i class="devicon-javascript-plain colored"></i>
+                                <i class="devicon-bootstrap-plain colored"></i>
+                                <i class="devicon-php-plain colored"></i>
+                                <i class="devicon-apache-plain colored"></i>
+                                <i class="devicon-sqlite-plain colored"></i>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" class="btn btn-primary">Live Demo</a>
+                                <a href="#" class="btn btn-secondary">View Code</a>
+                            </div>
+                        </div>
                     </div>
-                     <!-- තව project cards මෙතනට එකතු කරන්න -->
                 </div>
             </div>
 
@@ -422,6 +481,7 @@
 
     <!-- YOUR MAIN SCRIPT FILE -->
     <script src="main.js"></script>
+    
 
 
 </body>

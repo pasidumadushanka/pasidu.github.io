@@ -96,32 +96,27 @@ h1, h2, h3, h4, h5, h6, p, a {
 }
 
 /* =========================================================
-   THEME TOGGLE BUTTON (Desktop + Mobile Alignment)
+   THEME TOGGLE BUTTON (New Layout)
    ========================================================= */
 
-/* Ensure nav has a flex layout */
-nav, .navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px 40px;
-  position: relative;
-}
-
-/* Button styling */
+/* Default desktop positioning: next to nav links */
 .theme-btn {
   background: transparent;
   border: none;
-  color: var(--accent-color);
-  font-size: 22px;
+  color: var(--text-color); /* Default text color */
+  font-size: 1.5rem; /* Standard size */
   cursor: pointer;
-  transition: transform 0.2s ease, color 0.3s ease;
-  z-index: 999;
+  transition: transform 0.2s ease, color 0.3s ease, text-shadow 0.3s ease;
+  z-index: 100; /* Ensure it's above other elements */
+  margin-left: 20px; /* Space from nav links on desktop */
 }
 
 .theme-btn:hover {
-  transform: scale(1.1);
-  color: var(--text-color);
+  transform: scale(1.15);
+  color: var(--primary-color); /* Primary color on hover */
+  text-shadow: 0 0 10px var(--primary-color),
+               0 0 20px var(--primary-color),
+               0 0 30px var(--primary-color);
 }
 
 .theme-btn i {
@@ -131,72 +126,60 @@ nav, .navbar {
 /* Light theme icon animation */
 .light-theme .theme-btn i {
   transform: rotate(360deg);
-}
-
-/* =========================================================
-   RESPONSIVE FIXES
-   ========================================================= */
-
-@media (max-width: 992px) {
-  nav, .navbar {
-    padding: 15px 30px;
-  }
-  .theme-btn {
-    font-size: 20px;
-  }
-}
-
-@media (max-width: 768px) {
-  .theme-btn {
-    position: fixed;
-    top: 15px;
-    right: 20px;
-    font-size: 20px;
-    z-index: 2000;
-  }
-}
-
-@media (max-width: 480px) {
-  .theme-btn {
-    top: 12px;
-    right: 15px;
-    font-size: 18px;
-  }
-}
-
-/* Smooth transition for all sections */
-section, header, footer {
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-/* =========================================================
-   🌟 THEME BUTTON GLOW EFFECT (Final Polish)
-   ========================================================= */
-
-/* Glow ring effect on hover */
-.theme-btn:hover {
-  transform: scale(1.15);
-  color: var(--accent-color);
-  text-shadow: 0 0 10px var(--accent-color),
-               0 0 20px var(--accent-color),
-               0 0 30px var(--accent-color);
-}
-
-/* Slight soft glow when active */
-.light-theme .theme-btn i {
-  transform: rotate(360deg);
-  text-shadow: 0 0 10px var(--accent-color);
+  text-shadow: 0 0 10px var(--primary-color); /* Glow for light theme icon */
 }
 
 /* Add a tiny pulse animation (optional) */
 @keyframes glowPulse {
   0%, 100% {
-    text-shadow: 0 0 10px var(--accent-color);
+    text-shadow: 0 0 5px var(--primary-color);
   }
   50% {
-    text-shadow: 0 0 20px var(--accent-color);
+    text-shadow: 0 0 15px var(--primary-color);
   }
 }
 
-.theme-btn i {
+/* Only apply pulse animation if you want it to always glow slightly */
+/* .theme-btn i {
   animation: glowPulse 2.5s infinite ease-in-out;
+} */
+
+
+/* =========================================================
+   RESPONSIVE FIXES FOR THEME TOGGLE & HAMBURGER
+   ========================================================= */
+
+@media (max-width: 992px) {
+    /* Mobile nav section adjustments - ensure these are in your main CSS as well */
+    nav {
+        display: flex; /* Flexbox activate */
+        justify-content: space-between; /* Logo left, hamburger & theme right */
+        align-items: center;
+        padding: 15px 20px; /* Adjust padding for smaller screens */
+    }
+
+    /* Wrapper for Hamburger and Theme Button */
+    .hamburger-and-theme-wrapper {
+        display: flex;
+        align-items: center;
+        gap: 15px; /* Space between hamburger and theme button */
+        z-index: 1001; /* Ensure this wrapper is above nav-links when open */
+    }
+
+    .theme-btn {
+        position: static; /* Override fixed positioning for mobile */
+        font-size: 1.3rem; /* Adjust size for mobile */
+        margin-left: 0; /* Remove extra margin */
+        padding: 0;
+        z-index: auto; /* Reset z-index if set specifically for fixed */
+    }
+}
+
+@media (max-width: 480px) {
+  .theme-btn {
+    font-size: 1.2rem; /* Even smaller on very small screens */
+  }
+  .hamburger-and-theme-wrapper {
+    gap: 10px; /* Reduce gap on very small screens */
+  }
 }
