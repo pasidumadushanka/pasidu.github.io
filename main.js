@@ -155,7 +155,7 @@ const projectData = {
     },
     2: {
         title: "Wellness Center",
-        video: "https://res.cloudinary.com/ddykxl9pe/video/upload/v1762666506/Recording1_xefeeh.mp4",
+        video: "https://res.cloudinary.com/ddykxl9pe/video/upload/v1765785601/wellness_app_ohgmj5.mp4",
         description: "The Wellness Center platform acts as a digital bridge between healthcare providers, therapists, and patients. Developed using PHP and MySQL, this responsive web application streamlines the appointment scheduling process. It eliminates manual booking errors by offering a dynamic calendar system where patients can view therapist availability in real-time. Key features include an admin dashboard for staff management, automated email notifications for appointments, and a secure patient record system, ensuring privacy and efficiency in healthcare delivery.",
         liveLink: "#"
     },
