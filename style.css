@@ -1057,22 +1057,7 @@ body.light-theme .modal-footer {
     .modal-body h2 { font-size: 1.8rem; }
     .modal-description p { text-align: left; }
 }
-/* --- MOBILE TYPING FIX --- */
-@media (max-width: 768px) {
-    .hero-text h2 {
-        /* මේ උස (60px) ඔයාගේ ෆොන්ට් එකේ හැටියට වෙනස් කරගන්න පුළුවන් */
-        min-height: 80px; 
-        
-        /* අකුරු මැදට ගන්න */
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        
-        /* අමතරව: වචන කැඩෙන එක නවත්තන්න ඕන නම් මේක දාන්න (Optional) */
-        /* white-space: nowrap; */
-        /* font-size: 1.5rem; */ /* ෆොන්ට් එක ටිකක් පොඩි කරන්නත් පුළුවන් */
-    }
-}
+
 /* --- SCROLL PROGRESS BAR --- */
 .scroll-progress {
     position: fixed;
@@ -1144,4 +1129,20 @@ body.light-theme .modal-footer {
 
 @keyframes anim {
     100% { width: 0; }
+}
+/* --- MOBILE TYPING FIX --- */
+@media (max-width: 768px) {
+    .hero-text h2 {
+        /* මේ උස (60px) ඔයාගේ ෆොන්ට් එකේ හැටියට වෙනස් කරගන්න පුළුවන් */
+        min-height: 90px; 
+        
+        /* අකුරු මැදට ගන්න */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+        /* අමතරව: වචන කැඩෙන එක නවත්තන්න ඕන නම් මේක දාන්න (Optional) */
+        /* white-space: nowrap; */
+        /* font-size: 1.5rem; */ /* ෆොන්ට් එක ටිකක් පොඩි කරන්නත් පුළුවන් */
+    }
 }
