@@ -21,6 +21,16 @@ document.addEventListener('DOMContentLoaded', () => {
             loop: true
         });
     }
+    // >>>> මෙන්න මෙතනට අර අලුත් කෝඩ් එක Paste කරන්න <<<<
+    if (window.innerWidth < 768) {
+        const typedContainer = document.querySelector('.hero-text h2');
+        if (typedContainer) {
+            typedContainer.style.minHeight = '80px'; 
+            typedContainer.style.display = 'flex';
+            typedContainer.style.alignItems = 'center';
+            typedContainer.style.justifyContent = 'center';
+        }
+    }
 
     // 4. Hamburger Menu Logic
     const hamburger = document.querySelector('.hamburger');
