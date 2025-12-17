@@ -250,8 +250,10 @@ header {
 
 .gradient-text { 
     background: var(--gradient); 
+     background-clip: text; 
     -webkit-background-clip: text; 
     -webkit-text-fill-color: transparent; 
+    color: transparent; 
 }
 
 .hero p { 
