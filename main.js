@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // 3. Typed.js (Auto Typing Effect)
     if(document.getElementById('typed-text')) {
         new Typed('#typed-text', {
-            strings: ['Software Engineer', 'Full Stack Developer', 'Mobile App Developer', 'UX/UI Designer'],
+            strings: ['Software Engineer', 'Full Stack Developer', 'App Developer', 'UX/UI Designer'],
             typeSpeed: 50,
             backSpeed: 30,
             loop: true
