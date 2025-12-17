@@ -1142,7 +1142,7 @@ body.light-theme .modal-footer {
         justify-content: center;
         
         /* අමතරව: වචන කැඩෙන එක නවත්තන්න ඕන නම් මේක දාන්න (Optional) */
-        /* white-space: nowrap; */
-        /* font-size: 1.5rem; */ /* ෆොන්ට් එක ටිකක් පොඩි කරන්නත් පුළුවන් */
+         white-space: nowrap; 
+        font-size: 1.5rem; /* ෆොන්ට් එක ටිකක් පොඩි කරන්නත් පුළුවන් */
     }
 }
