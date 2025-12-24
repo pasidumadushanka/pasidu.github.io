@@ -214,7 +214,7 @@ const projectData = {
         title: "Wellness Center",
         video: "https://res.cloudinary.com/ddykxl9pe/video/upload/v1762666506/Recording1_xefeeh.mp4",
         description: "The Wellness Center platform acts as a digital bridge between healthcare providers, therapists, and patients. Developed using PHP and MySQL, this responsive web application streamlines the appointment scheduling process. It eliminates manual booking errors by offering a dynamic calendar system where patients can view therapist availability in real-time.",
-        liveLink: "#"
+        liveLink: "https://greenlife-wigs.vercel.app/"
     },
     3: {
         title: "GadgetHub (SOC)",
