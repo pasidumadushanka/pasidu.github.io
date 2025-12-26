@@ -1130,3 +1130,24 @@ body.light-theme .modal-footer {
 @keyframes anim {
     100% { width: 0; }
 }
+/* --- PROFESSIONAL MOBILE TYPING FIX --- */
+@media (max-width: 768px) {
+    .hero-text h2 {
+        /* 1. පේළි 2කට සරිලන ස්ථාවර උසක් වෙන් කිරීම (Fixed Height Container) */
+        min-height: 3.5rem; 
+        
+        /* 2. අකුරු මැදට ගැනීම (Flexbox Centering) */
+        display: flex;
+        align-items: center;     /* උඩින් සහ යටින් මැදට */
+        justify-content: center; /* දෙපැත්තෙන් මැදට */
+        
+        /* 3. Line Height එක පාලනය කිරීම (වැදගත්) */
+        line-height: 1.4;
+        
+        /* 4. අමතර Margin එකක් තැබීම (යටින් තියෙන දේවල් ගැටෙන්නෙ නැති වෙන්න) */
+        margin-bottom: 20px;
+        
+        /* 5. අවශ්‍ය නම් ෆොන්ට් එක චුට්ටක් පොඩි කරන්න (Option) */
+        /* font-size: 1.8rem; */
+    }
+}

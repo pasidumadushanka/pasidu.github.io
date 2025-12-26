@@ -10,10 +10,12 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // 2. Initialize AOS (Animations)
-    AOS.init({ duration: 1000, offset: 100, once: true });
+    if(typeof AOS !== 'undefined') {
+        AOS.init({ duration: 1000, offset: 100, once: true });
+    }
 
     // 3. Typed.js (Auto Typing Effect)
-    if(document.getElementById('typed-text')) {
+    if(document.getElementById('typed-text') && typeof Typed !== 'undefined') {
         new Typed('#typed-text', {
             strings: ['Software Engineer', 'Full Stack Developer', 'Mobile App Developer', 'UX/UI Designer'],
             typeSpeed: 50,
@@ -21,7 +23,9 @@ document.addEventListener('DOMContentLoaded', () => {
             loop: true
         });
     }
-    // >>>> මෙන්න මෙතනට අර අලුත් කෝඩ් එක Paste කරන්න <<<<
+
+    // --- MOBILE VIBRATION FIX ---
+    // Fixes layout shift on mobile when typing
     if (window.innerWidth < 768) {
         const typedContainer = document.querySelector('.hero-text h2');
         if (typedContainer) {
@@ -36,7 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const hamburger = document.querySelector('.hamburger');
     const navLinks = document.querySelector('.nav-links');
 
-    if(hamburger) {
+    if(hamburger && navLinks) {
         hamburger.addEventListener('click', () => {
             navLinks.classList.toggle('active');
             hamburger.classList.toggle('toggle');
@@ -65,6 +69,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const body = document.body;
 
     if(themeBtn) {
+        // Load saved theme
         if(localStorage.getItem('theme') === 'light'){
             body.classList.add('light-theme');
             if(icon) icon.classList.replace('fa-moon', 'fa-sun');
@@ -73,7 +78,10 @@ document.addEventListener('DOMContentLoaded', () => {
         themeBtn.addEventListener('click', () => {
             body.classList.toggle('light-theme');
             const isLight = body.classList.contains('light-theme');
-            if(icon) icon.className = isLight ? 'fas fa-sun' : 'fas fa-moon';
+            
+            if(icon) {
+                icon.className = isLight ? 'fas fa-sun' : 'fas fa-moon';
+            }
             localStorage.setItem('theme', isLight ? 'light' : 'dark');
         });
     }
@@ -85,8 +93,11 @@ document.addEventListener('DOMContentLoaded', () => {
     if(tabs.length > 0) {
         tabs.forEach(tab => {
             tab.addEventListener('click', () => {
+                // Remove active from all
                 tabs.forEach(t => t.classList.remove('active'));
                 contents.forEach(c => c.classList.remove('active'));
+
+                // Add active to clicked
                 tab.classList.add('active');
                 const target = document.getElementById(tab.dataset.target);
                 if(target) target.classList.add('active');
@@ -95,7 +106,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // 7. Swiper Slider
-    if(document.querySelector('.testimonial-slider')) {
+    if(document.querySelector('.testimonial-slider') && typeof Swiper !== 'undefined') {
         new Swiper('.testimonial-slider', {
             slidesPerView: 1, 
             spaceBetween: 30, 
@@ -110,14 +121,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function showToast(msg, type) {
         if(!toastBox) return;
+        
         let toast = document.createElement("div");
         toast.classList.add("toast");
+        if(type === 'error') toast.classList.add("error");
+        
         toast.innerHTML = type === 'success' 
             ? `<i class="fas fa-check-circle"></i> ${msg}` 
             : `<i class="fas fa-exclamation-circle"></i> ${msg}`;
 
-        if (type === 'error') toast.classList.add("error");
-        
         toastBox.appendChild(toast);
         setTimeout(() => { toast.remove(); }, 5000);
     }
@@ -152,7 +164,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 9. Vanilla Tilt (Only for Hero Image)
+    // 9. Vanilla Tilt (For Hero Image Only)
     if(typeof VanillaTilt !== 'undefined') {
         VanillaTilt.init(document.querySelectorAll(".img-border"), {
             max: 15, speed: 400, glare: true, "max-glare": 0.2
@@ -160,15 +172,15 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // 10. Scroll Progress Bar
-    window.addEventListener("scroll", () => {
-        const progressBar = document.querySelector(".scroll-progress");
-        if(progressBar) {
+    const progressBar = document.querySelector(".scroll-progress");
+    if(progressBar) {
+        window.addEventListener("scroll", () => {
             const scrollTop = document.documentElement.scrollTop;
             const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
             const scrollPercentage = (scrollTop / scrollHeight) * 100;
             progressBar.style.width = `${scrollPercentage}%`;
-        }
-    });
+        });
+    }
 
     // 11. Custom Cursor Logic
     const cursorDot = document.querySelector(".cursor-dot");
@@ -179,9 +191,11 @@ document.addEventListener('DOMContentLoaded', () => {
             const posX = e.clientX;
             const posY = e.clientY;
 
+            // Dot moves instantly
             cursorDot.style.left = `${posX}px`;
             cursorDot.style.top = `${posY}px`;
 
+            // Outline moves with delay
             cursorOutline.animate({
                 left: `${posX}px`,
                 top: `${posY}px`
@@ -196,11 +210,11 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-}); // DOMContentLoaded End
+}); // END OF DOMContentLoaded
 
 
 /* =========================================
-   PROJECT DETAILS MODAL LOGIC (OUTSIDE DOMContentLoaded)
+   PROJECT DETAILS MODAL LOGIC (OUTSIDE)
    ========================================= */
 
 const projectData = {
@@ -212,7 +226,7 @@ const projectData = {
     },
     2: {
         title: "Wellness Center",
-        video: "https://res.cloudinary.com/ddykxl9pe/video/upload/v1762666506/Recording1_xefeeh.mp4",
+        video: "https://res.cloudinary.com/ddykxl9pe/video/upload/v1765785601/wellness_app_ohgmj5.mp4",
         description: "The Wellness Center platform acts as a digital bridge between healthcare providers, therapists, and patients. Developed using PHP and MySQL, this responsive web application streamlines the appointment scheduling process. It eliminates manual booking errors by offering a dynamic calendar system where patients can view therapist availability in real-time.",
         liveLink: "https://greenlife-wigs.vercel.app/"
     },
@@ -242,7 +256,7 @@ const projectData = {
     }
 };
 
-// Global Modal Variables
+// DOM Elements for Modal
 const modal = document.getElementById("project-modal");
 const closeModal = document.querySelector(".close-modal");
 const mTitle = document.getElementById("modal-title");
@@ -267,10 +281,10 @@ function openModal(id) {
             modal.style.display = "flex";
             setTimeout(() => {
                 modal.classList.add("show");
-                mVideo.play();
+                mVideo.play().catch(error => console.log("Auto-play prevented"));
             }, 10);
         }
-        document.body.style.overflow = "hidden";
+        document.body.style.overflow = "hidden"; // Stop scrolling
     }
 }
 
@@ -282,13 +296,13 @@ function closeProjectModal() {
         
         setTimeout(() => {
             modal.style.display = "none";
-            document.body.style.overflow = "auto";
-            if(mSource) mSource.src = "";
+            document.body.style.overflow = "auto"; // Enable scrolling
+            if(mSource) mSource.src = ""; // Stop video buffering
         }, 300);
     }
 }
 
-// Attach Listeners if Elements Exist
+// Event Listeners for Modal
 if(closeModal) {
     closeModal.addEventListener("click", closeProjectModal);
 }
