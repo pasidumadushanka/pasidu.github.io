@@ -25,7 +25,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // --- MOBILE VIBRATION FIX ---
-    // Fixes layout shift on mobile when typing
     if (window.innerWidth < 768) {
         const typedContainer = document.querySelector('.hero-text h2');
         if (typedContainer) {
@@ -46,7 +45,6 @@ document.addEventListener('DOMContentLoaded', () => {
             hamburger.classList.toggle('toggle');
         });
 
-        // Close menu when a link is clicked
         document.querySelectorAll('.nav-links a').forEach(link => {
             link.addEventListener('click', () => {
                 navLinks.classList.remove('active');
@@ -54,7 +52,6 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
 
-        // Close menu when clicking outside
         document.addEventListener('click', (e) => {
             if (!hamburger.contains(e.target) && !navLinks.contains(e.target)) {
                 navLinks.classList.remove('active');
@@ -69,7 +66,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const body = document.body;
 
     if(themeBtn) {
-        // Load saved theme
         if(localStorage.getItem('theme') === 'light'){
             body.classList.add('light-theme');
             if(icon) icon.classList.replace('fa-moon', 'fa-sun');
@@ -93,11 +89,8 @@ document.addEventListener('DOMContentLoaded', () => {
     if(tabs.length > 0) {
         tabs.forEach(tab => {
             tab.addEventListener('click', () => {
-                // Remove active from all
                 tabs.forEach(t => t.classList.remove('active'));
                 contents.forEach(c => c.classList.remove('active'));
-
-                // Add active to clicked
                 tab.classList.add('active');
                 const target = document.getElementById(tab.dataset.target);
                 if(target) target.classList.add('active');
@@ -191,18 +184,15 @@ document.addEventListener('DOMContentLoaded', () => {
             const posX = e.clientX;
             const posY = e.clientY;
 
-            // Dot moves instantly
             cursorDot.style.left = `${posX}px`;
             cursorDot.style.top = `${posY}px`;
 
-            // Outline moves with delay
             cursorOutline.animate({
                 left: `${posX}px`,
                 top: `${posY}px`
             }, { duration: 500, fill: "forwards" });
         });
 
-        // Hover Effect
         const interactiveElements = document.querySelectorAll('a, button, .project-card, .social-btn');
         interactiveElements.forEach(el => {
             el.addEventListener('mouseenter', () => document.body.classList.add('hovering'));
@@ -214,7 +204,42 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 /* =========================================
-   PROJECT DETAILS MODAL LOGIC (OUTSIDE)
+   COMING SOON MODAL LOGIC
+   ========================================= */
+const comingSoonModal = document.getElementById("coming-soon-modal");
+const closeComingSoonBtn = document.querySelector(".close-coming-soon");
+
+function openComingSoon() {
+    if(comingSoonModal) {
+        comingSoonModal.style.display = "flex";
+        setTimeout(() => {
+            comingSoonModal.classList.add("show");
+        }, 10);
+    }
+}
+
+function closeComingSoon() {
+    if(comingSoonModal) {
+        comingSoonModal.classList.remove("show");
+        setTimeout(() => {
+            comingSoonModal.style.display = "none";
+        }, 300);
+    }
+}
+
+if(closeComingSoonBtn) {
+    closeComingSoonBtn.addEventListener("click", closeComingSoon);
+}
+
+window.addEventListener("click", (e) => {
+    if (e.target == comingSoonModal) {
+        closeComingSoon();
+    }
+});
+
+
+/* =========================================
+   PROJECT DETAILS MODAL LOGIC
    ========================================= */
 
 const projectData = {
@@ -222,13 +247,13 @@ const projectData = {
         title: "LuxeVista Hotel App",
         video: "https://res.cloudinary.com/ddykxl9pe/video/upload/v1762666435/app_gipylb.mp4",
         description: "LuxeVista is a state-of-the-art mobile application designed to revolutionize the hospitality industry. Built using Android Studio and Java with a robust Firebase backend, it offers a seamless booking experience for users while providing hotel administrators with real-time management tools. The app features secure user authentication, real-time room availability tracking, and an integrated payment gateway.",
-        liveLink: "#"
+        liveLink: "#" // No Link -> Coming Soon
     },
     2: {
         title: "Wellness Center",
         video: "https://res.cloudinary.com/ddykxl9pe/video/upload/v1765785601/wellness_app_ohgmj5.mp4",
         description: "The Wellness Center platform acts as a digital bridge between healthcare providers, therapists, and patients. Developed using PHP and MySQL, this responsive web application streamlines the appointment scheduling process. It eliminates manual booking errors by offering a dynamic calendar system where patients can view therapist availability in real-time.",
-        liveLink: "https://greenlife-wigs.vercel.app/"
+        liveLink: "https://greenlife-wigs.vercel.app/" // Has Link
     },
     3: {
         title: "GadgetHub (SOC)",
@@ -256,7 +281,7 @@ const projectData = {
     }
 };
 
-// DOM Elements for Modal
+// DOM Elements
 const modal = document.getElementById("project-modal");
 const closeModal = document.querySelector(".close-modal");
 const mTitle = document.getElementById("modal-title");
@@ -272,7 +297,16 @@ function openModal(id) {
     if(data && modal) {
         mTitle.innerText = data.title;
         mDesc.innerText = data.description;
+        
+        // --- LINK CHECKING LOGIC ---
         mLive.href = data.liveLink;
+        mLive.onclick = function(e) {
+            if(data.liveLink === "#" || data.liveLink === "") {
+                e.preventDefault();
+                openComingSoon(); // Show "Coming Soon" Modal
+            }
+        };
+        // ---------------------------
         
         if(mVideo && mSource) {
             mSource.src = data.video;
@@ -281,10 +315,10 @@ function openModal(id) {
             modal.style.display = "flex";
             setTimeout(() => {
                 modal.classList.add("show");
-                mVideo.play().catch(error => console.log("Auto-play prevented"));
+                mVideo.play().catch(e => console.log("Autoplay prevented"));
             }, 10);
         }
-        document.body.style.overflow = "hidden"; // Stop scrolling
+        document.body.style.overflow = "hidden";
     }
 }
 
@@ -296,13 +330,13 @@ function closeProjectModal() {
         
         setTimeout(() => {
             modal.style.display = "none";
-            document.body.style.overflow = "auto"; // Enable scrolling
-            if(mSource) mSource.src = ""; // Stop video buffering
+            document.body.style.overflow = "auto";
+            if(mSource) mSource.src = "";
         }, 300);
     }
 }
 
-// Event Listeners for Modal
+// Attach Listeners
 if(closeModal) {
     closeModal.addEventListener("click", closeProjectModal);
 }
