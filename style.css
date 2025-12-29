@@ -296,9 +296,17 @@ header {
     border: 5px solid var(--primary-color); 
     box-shadow: 0 0 50px rgba(138, 43, 226, 0.4);
     animation: float 6s ease-in-out infinite;
+    /*  object-position  */
 }
 
-.img-border img { width: 100%; height: 100%; object-fit: cover; }
+.img-border img { 
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover;
+    
+    
+    object-position: top center; 
+}
 
 @keyframes float { 
     0%, 100% { transform: translateY(0); } 
