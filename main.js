@@ -1,5 +1,3 @@
-
-
 document.addEventListener('DOMContentLoaded', () => {
     
     // 1. Loading Screen
@@ -11,12 +9,12 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 1000);
     }
 
-    // 2. Initialize AOS
+    // 2. Initialize AOS (Animations)
     if(typeof AOS !== 'undefined') {
         AOS.init({ duration: 1000, offset: 100, once: true });
     }
 
-    // 3. Typed.js
+    // 3. Typed.js (Auto Typing Effect)
     if(document.getElementById('typed-text') && typeof Typed !== 'undefined') {
         new Typed('#typed-text', {
             strings: ['Software Engineer', 'Full Stack Developer', 'Mobile App Developer', 'UX/UI Designer'],
@@ -27,6 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // --- MOBILE VIBRATION FIX ---
+    // Fixes layout shift on mobile when typing
     if (window.innerWidth < 768) {
         const typedContainer = document.querySelector('.hero-text h2');
         if (typedContainer) {
@@ -47,6 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
             hamburger.classList.toggle('toggle');
         });
 
+        // Close menu when a link is clicked
         document.querySelectorAll('.nav-links a').forEach(link => {
             link.addEventListener('click', () => {
                 navLinks.classList.remove('active');
@@ -54,6 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
 
+        // Close menu when clicking outside
         document.addEventListener('click', (e) => {
             if (!hamburger.contains(e.target) && !navLinks.contains(e.target) && !e.target.closest('.nav-controls')) {
                 navLinks.classList.remove('active');
@@ -68,6 +69,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const body = document.body;
 
     if(themeBtn) {
+        // Load saved theme
         if(localStorage.getItem('theme') === 'light'){
             body.classList.add('light-theme');
             if(icon) icon.classList.replace('fa-moon', 'fa-sun');
@@ -91,8 +93,11 @@ document.addEventListener('DOMContentLoaded', () => {
     if(tabs.length > 0) {
         tabs.forEach(tab => {
             tab.addEventListener('click', () => {
+                // Remove active from all
                 tabs.forEach(t => t.classList.remove('active'));
                 contents.forEach(c => c.classList.remove('active'));
+
+                // Add active to clicked
                 tab.classList.add('active');
                 const target = document.getElementById(tab.dataset.target);
                 if(target) target.classList.add('active');
@@ -159,7 +164,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 9. Vanilla Tilt (For Hero Image Only)
+    // 9. Vanilla Tilt (For Hero Image Only - FIX ADDED)
     if(typeof VanillaTilt !== 'undefined') {
         VanillaTilt.init(document.querySelectorAll(".img-border"), {
             max: 15, speed: 400, glare: true, "max-glare": 0.2
@@ -182,26 +187,32 @@ document.addEventListener('DOMContentLoaded', () => {
     const cursorOutline = document.querySelector(".cursor-outline");
 
     if(cursorDot && cursorOutline) {
-        window.addEventListener("mousemove", (e) => {
-            const posX = e.clientX;
-            const posY = e.clientY;
+        // Hide cursor on mobile/touch devices
+        if (window.matchMedia("(pointer: fine)").matches) {
+            window.addEventListener("mousemove", (e) => {
+                const posX = e.clientX;
+                const posY = e.clientY;
 
-            // Dot moves instantly
-            cursorDot.style.left = `${posX}px`;
-            cursorDot.style.top = `${posY}px`;
+                // Dot moves instantly
+                cursorDot.style.left = `${posX}px`;
+                cursorDot.style.top = `${posY}px`;
 
-            // Outline moves with delay
-            cursorOutline.animate({
-                left: `${posX}px`,
-                top: `${posY}px`
-            }, { duration: 500, fill: "forwards" });
-        });
+                // Outline moves with delay
+                cursorOutline.animate({
+                    left: `${posX}px`,
+                    top: `${posY}px`
+                }, { duration: 500, fill: "forwards" });
+            });
 
-        const interactiveElements = document.querySelectorAll('a, button, .project-card, .social-btn');
-        interactiveElements.forEach(el => {
-            el.addEventListener('mouseenter', () => document.body.classList.add('hovering'));
-            el.addEventListener('mouseleave', () => document.body.classList.remove('hovering'));
-        });
+            const interactiveElements = document.querySelectorAll('a, button, .project-card, .social-btn');
+            interactiveElements.forEach(el => {
+                el.addEventListener('mouseenter', () => document.body.classList.add('hovering'));
+                el.addEventListener('mouseleave', () => document.body.classList.remove('hovering'));
+            });
+        } else {
+            cursorDot.style.display = 'none';
+            cursorOutline.style.display = 'none';
+        }
     }
 
 }); // END OF DOMContentLoaded
@@ -227,6 +238,7 @@ function closeComingSoon() {
         comingSoonModal.classList.remove("show");
         setTimeout(() => {
             comingSoonModal.style.display = "none";
+        document.body.style.overflow = "auto";     
         }, 300);
     }
 }
@@ -307,7 +319,15 @@ function openModal(id) {
         mLive.onclick = function(e) {
             if(data.liveLink === "#" || data.liveLink === "") {
                 e.preventDefault();
-                openComingSoon(); // Show "Coming Soon" Modal
+                // Close details modal first
+                modal.classList.remove("show");
+                if(mVideo) mVideo.pause();
+                
+                setTimeout(() => { 
+                    modal.style.display = "none";
+                    // Then show coming soon
+                    openComingSoon();
+                }, 300);
             }
         };
         // ---------------------------

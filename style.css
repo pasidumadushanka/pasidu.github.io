@@ -1172,23 +1172,40 @@ body.light-theme .modal-footer {
 /* --- PROFESSIONAL MOBILE TYPING FIX --- */
 @media (max-width: 768px) {
     .hero-text h2 {
-        /* 1. පේළි 2කට සරිලන ස්ථාවර උසක් වෙන් කිරීම (Fixed Height Container) */
-        min-height: 3.5rem; 
+        /* උස ස්ථාවරව තැබීම */
+        min-height: 5rem; 
         
-        /* 2. අකුරු මැදට ගැනීම (Flexbox Centering) */
+        /* අකුරු මැදට ගැනීම සහ පේළි දෙකකට කැඩීම */
         display: flex;
-        align-items: center;     /* උඩින් සහ යටින් මැදට */
-        justify-content: center; /* දෙපැත්තෙන් මැදට */
+        flex-direction: column; /* මෙය දැම්මම 'I am' උඩටත්, Type වෙන එක යටටත් එයි */
+        justify-content: center;
+        align-items: center;
         
-        /* 3. Line Height එක පාලනය කිරීම (වැදගත්) */
-        line-height: 1.4;
+        /* පේළි පරතරය */
+        line-height: 0.5;
+        gap: 3px; 
         
-        /* 4. අමතර Margin එකක් තැබීම (යටින් තියෙන දේවල් ගැටෙන්නෙ නැති වෙන්න) */
-        margin-bottom: 20px;
-        
-        /* 5. අවශ්‍ය නම් ෆොන්ට් එක චුට්ටක් පොඩි කරන්න (Option) */
-        /* font-size: 1.8rem; */
+        margin-bottom: 40px;
     }
+
+    /* "I am" කොටස */
+    .static-txt {
+        display: block;
+        font-size: 1.2rem;
+        color: var(--text-muted);
+        font-weight: 500;
+    }
+
+    /* Type වෙන කොටස ලස්සනට පෙන්වීම */
+    #typed-text {
+        color: var(--primary-color); /* පාට වෙනස් කළා කැපී පෙනෙන්න */
+        font-weight: 700;
+        font-size: 1.5rem;
+    }
+    /* --- REMOVE TYPING CURSOR --- */
+.typed-cursor {
+    display: none !important;
+}
 }
 /* =========================================
    COMING SOON MODAL STYLES
