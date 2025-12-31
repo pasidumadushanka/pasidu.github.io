@@ -30,6 +30,8 @@
 
     <!-- Main CSS -->
     <link rel="stylesheet" href="style.css">
+    <!-- Calendly CSS -->
+    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
     
     <!-- Google Schema Markup (Structured Data) -->
 <script type="application/ld+json">
@@ -547,6 +549,14 @@
                                 <h4>GitHub</h4>
                             </div>
                         </a>
+                        <!-- Calendly Button -->
+                        <div class="social-btn calendly" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/pasindumadushanka'});return false;">
+                            <div class="icon"><i class="fas fa-calendar-check"></i></div>
+                            <div class="text">
+                             <span>Schedule a</span>
+                             <h4>Meeting</h4>
+                          </div>
+                      </div>
                     </div>
 
                     <div class="contact-form glass" data-aos="fade-left">
@@ -651,6 +661,9 @@
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
+    <!-- Calendly Script -->
+    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
     <script src="main.js"></script>
+    
 </body>
 </html>

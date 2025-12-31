@@ -1289,3 +1289,19 @@ body.light-theme .modal-footer {
 .cursor-outline { width: 40px; height: 40px; border: 2px solid var(--primary-color); transition: width 0.2s, height 0.2s, background-color 0.2s; }
 body.hovering .cursor-outline { width: 60px; height: 60px; background-color: rgba(138, 43, 226, 0.1); border-color: transparent; }
 @media (max-width: 992px) { .cursor-dot, .cursor-outline { display: none; } }
+/* --- CALENDLY BUTTON STYLE --- */
+.calendly:hover {
+    box-shadow: 0 10px 30px rgba(255, 165, 0, 0.2); /* Orange Shadow */
+    border-color: #FFA500;
+}
+
+.calendly:hover .icon {
+    background: #FFA500; /* Orange Background */
+    box-shadow: 0 0 20px #FFA500;
+    transform: scale(1.1) rotate(-10deg);
+}
+
+/* Light Mode Support */
+body.light-theme .calendly:hover {
+    border-color: #FFA500;
+}
