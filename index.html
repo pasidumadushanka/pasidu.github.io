@@ -21,6 +21,8 @@
     <meta property="og:title" content="Pasidu Madushanka | Software Engineer">
     <meta property="og:description" content="Explore the portfolio of Pasindu Madushanka, featuring innovative software solutions and projects.">
     <meta property="og:image" content="https://pasidumadushanka.github.io/pasidu.github.io/photo/pasiya.jpeg">
+    <meta property="og:site_name" content="Pasindu.Dev"> 
+
 
     <!-- Libraries -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -38,7 +40,7 @@
 {
   "@context": "https://schema.org",
   "@type": "Person",
-  "name": "Pasidu Madushanka",
+  "name": "Pasindu Madushanka",
   "url": "https://pasidumadushanka.github.io/pasidu.github.io/",
   "image": "https://pasidumadushanka.github.io/pasidu.github.io/photo/pasiya.jpeg",
   "jobTitle": "Software Engineer",
@@ -46,7 +48,10 @@
     "@type": "Organization",
     "name": "Freelance / Open to Work"
   },
-  "alumniOf": "Cardiff Metropolitan University",
+  "alumniOf": { // alumniOf යනු Organization වර්ගයක් විය හැක
+    "@type": "EducationalOrganization",
+    "name": "Cardiff Metropolitan University"
+  },
   "address": {
     "@type": "PostalAddress",
     "addressLocality": "Colombo",
@@ -54,10 +59,48 @@
   },
   "sameAs": [
     "https://www.linkedin.com/in/pasidu-madushanka-8b10b536b/",
+    "https://github.com/pasidumadushanka", // GitHub Profile එකක් එකතු කළා
     "https://pasidumadushanka.github.io/pasidu.github.io/",
     "https://wa.me/94789701351"
   ],
-  "knowsAbout": ["Software Engineering", "Full Stack Development", "Mobile App Development", "Cyber Security", "React", "Flutter", "Java"]
+  "knowsAbout": [
+    "Software Engineering", 
+    "Full Stack Development", 
+    "Mobile App Development", 
+    "Flutter", // වඩාත් නිශ්චිත තාක්ෂණික වචන එකතු කළා
+    "Android Development",
+    "Web Development",
+    "React.js",
+    "Node.js",
+    "Java",
+    "PHP",
+    "C#",
+    "MySQL",
+    "Firebase",
+    "Cyber Security" 
+  ],
+  "mainEntityOfPage": { 
+    "@type": "WebPage",
+    "@id": "https://pasidumadushanka.github.io/pasidu.github.io/" 
+  },
+  "potentialAction": { 
+    "@type": "CommunicateAction",
+    "target": {
+      "@type": "EntryPoint",
+      "urlTemplate": "mailto:pasindumadu378@gmail.com",
+      "actionPlatform": [
+        "http://schema.org/DesktopWebPlatform",
+        "http://schema.org/MobileWebPlatform"
+      ]
+    },
+    "result": {
+      "@type": "ActionResult",
+      "object": {
+        "@type": "Message",
+        "about": "Inquiry from Pasindu Madushanka's Portfolio"
+      }
+    }
+  }
 }
 </script>
 </head>
