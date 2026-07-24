@@ -259,6 +259,14 @@ window.addEventListener("click", (e) => {
    ========================================= */
 
 const projectData = {
+
+    0.1: {
+        title: "Lassana Glow",
+        video: "https://res.cloudinary.com/ddykxl9pe/image/upload/v1784867800/Gemini_Generated_Image_ovbgs2ovbgs2ovbg_oqesip.png",
+        description: "🌿 Case Study: Building Lassana Glow — A Full-Stack E-Commerce PlatformExcited to share a recent project I completed for Prabodini Perera — a complete e-commerce platform for her botanical skincare brand, Lassana Glow.The goal was simple but ambitious: give the brand a storefront that feels as premium as the products themselves, backed by a system powerful enough to actually run the business behind the scenes.Here's what went into it:🛍 For the customer A clean, minimal storefront focused on the product — smooth browsing, a secure checkout flow, and WhatsApp integration so customers can order and get support without friction.📊 For the business custom-built admin dashboard giving real-time visibility into sales, inventory, and store performance — no more guessing what's selling or what's running low.⚙️ Built with Next.js, TypeScript, and MongoDB — chosen for performance, type safety, and the flexibility to scale as the business grows.📱 Try it yourself I also implemented a QR code on the storefront — scan it and it takes you straight to the live site, no typing a URL needed. A small detail, but one that makes the shopping experience that much smoother for customers on the go.What I enjoyed most about this project was the balance it required — designing something visually elegant on the front end while making sure the admin side was practical and genuinely useful day-to-day for the client.Grateful for the opportunity to work on this, and looking forward to more projects like it.",
+        liveLink: "https://www.lassanaglow.lk/" 
+    },
+
     1: {
         title: "LuxeVista Hotel App",
         video: "https://res.cloudinary.com/ddykxl9pe/video/upload/v1762666435/app_gipylb.mp4",
@@ -303,6 +311,7 @@ const closeModal = document.querySelector(".close-modal");
 const mTitle = document.getElementById("modal-title");
 const mDesc = document.getElementById("modal-desc");
 const mVideo = document.getElementById("modal-video");
+const mImage = document.getElementById("modal-image");
 const mSource = mVideo ? mVideo.querySelector("source") : null;
 const mLive = document.getElementById("modal-live");
 
@@ -332,14 +341,27 @@ function openModal(id) {
         };
         // ---------------------------
         
-        if(mVideo && mSource) {
+        const isVideo = typeof data.video === 'string' && /\.(mp4|webm|ogg)$/i.test(data.video);
+
+        if(isVideo && mVideo && mSource) {
             mSource.src = data.video;
+            mVideo.style.display = 'block';
+            if(mImage) mImage.style.display = 'none';
             mVideo.load();
             
             modal.style.display = "flex";
             setTimeout(() => {
                 modal.classList.add("show");
                 mVideo.play().catch(e => console.log("Autoplay prevented"));
+            }, 10);
+        } else if(mImage) {
+            if(mVideo) mVideo.style.display = 'none';
+            mImage.src = data.video;
+            mImage.style.display = 'block';
+
+            modal.style.display = "flex";
+            setTimeout(() => {
+                modal.classList.add("show");
             }, 10);
         }
         document.body.style.overflow = "hidden";
@@ -356,6 +378,7 @@ function closeProjectModal() {
             modal.style.display = "none";
             document.body.style.overflow = "auto";
             if(mSource) mSource.src = "";
+            if(mImage) mImage.src = "";
         }, 300);
     }
 }

@@ -247,6 +247,37 @@
                 <!-- Projects Grid -->
                 <div class="tab-content active" id="projects">
                     <div class="project-grid">
+
+                        <!-- Project 0.1: Lassana glow -->
+                        <div class="project-card glass" data-aos="fade-up">
+                            <div class="media-container">
+                                <div class="overlay"></div>
+                                <img src="https://res.cloudinary.com/ddykxl9pe/image/upload/v1784867800/Gemini_Generated_Image_ovbgs2ovbgs2ovbg_oqesip.png" alt="Lassana Glow Preview">
+                            </div>
+                            <div class="card-body">
+                                <div class="card-text">
+                                    <h3>Lassana Glow</h3>
+                                    <p>Transforming Luxury Skincare Retail with a Custom E-Commerce Solution! ✨
+
+I’m thrilled to share one of my latest web development projects for Lassana Glow – a premium botanical skincare brand! 🌿✨</p>
+                                </div>
+                                
+                                <div class="tech-stack">
+                                    <i class="devicon-android-plain colored" title="Android"></i>
+                                    <i class="devicon-java-plain colored" title="Java"></i>
+                                    <i class="devicon-firebase-plain colored" title="Firebase"></i>
+                                </div>
+
+                                <div class="links">
+                                    <button class="link-btn details" onclick="openModal(0.1)">
+                                        <i class="fas fa-info-circle"></i> View Details
+                                    </button>
+                                    
+                                    <a href="https://github.com/pasidumadushanka/luxevista-app.git" class="link-btn code"><i class="fab fa-github"></i> GitHub</a>
+                                    
+                                </div>
+                            </div>
+                        </div>
                         
                         <!-- Project 1: LuxeVista -->
                         <div class="project-card glass" data-aos="fade-up">
@@ -651,9 +682,10 @@
         
         <!-- Video Header -->
         <div class="modal-header">
-            <video id="modal-video" autoplay muted loop playsinline>
+            <video id="modal-video" autoplay muted loop playsinline style="display: none; width: 100%; height: auto; border-radius: 20px;">
                 <source src="" type="video/mp4">
             </video>
+            <img id="modal-image" src="" alt="Project preview" style="display:none; width:100%; height:auto; border-radius:20px; object-fit: cover;" />
             <div class="header-overlay"></div>
         </div>
 
