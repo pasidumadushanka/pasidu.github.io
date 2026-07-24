@@ -126,7 +126,9 @@ img { max-width: 100%; display: block; }
 
 .section-title span { 
     background: var(--gradient); 
+    background-clip: text; 
     -webkit-background-clip: text; 
+    color: transparent; 
     -webkit-text-fill-color: transparent; 
 }
 
@@ -257,7 +259,9 @@ header {
 
 .gradient-text { 
     background: var(--gradient); 
+    background-clip: text; 
     -webkit-background-clip: text; 
+    color: transparent; 
     -webkit-text-fill-color: transparent; 
 }
 
