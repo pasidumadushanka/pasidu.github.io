@@ -60,11 +60,13 @@ img { max-width: 100%; display: block; }
    2. REUSABLE COMPONENTS
    ========================================= */
 
-.container { 
-    max-width: 1200px; 
-    margin: 0 auto; 
-    padding: 0 20px; 
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
+
+.hidden { display: none; }
 
 /* Glass Utility Class */
 .glass {
@@ -897,6 +899,8 @@ footer {
         box-shadow: 0 10px 40px rgba(0,0,0,0.1);
     }
     body.light-theme .nav-links a { color: #333; }
+
+    .cursor-dot, .cursor-outline { display: none; }
 }
 
 @media (max-width: 600px) {
@@ -990,7 +994,7 @@ body.light-theme .modal-content {
 /* Light Mode Close Button */
 body.light-theme .close-modal {
     background: rgba(255, 255, 255, 0.8);
-    color: #333; /* අයිකන් එක කළු පාට */
+    color: #333;
 }
 
 .close-modal:hover { 
@@ -1008,7 +1012,8 @@ body.light-theme .close-modal {
     border-bottom: 1px solid rgba(255,255,255,0.1);
 }
 
-.modal-header video {
+.modal-header video,
+.modal-header img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -1025,7 +1030,7 @@ body.light-theme .close-modal {
 }
 
 /* Gradient Overlay on Video (Light Mode) */
-/* මේකෙන් තමයි වීඩියෝ එකේ යට කොටස සුදු පාටට Fade වෙන්නේ */
+
 body.light-theme .header-overlay {
     background: linear-gradient(to top, rgba(255, 255, 255, 1), transparent);
 }
@@ -1099,6 +1104,35 @@ body.light-theme .modal-footer {
     .modal-header { height: 200px; }
     .modal-body h2 { font-size: 1.8rem; }
     .modal-description p { text-align: left; }
+
+    /* Mobile typing effect fix: reserve height and stack "I am" above the typed text */
+    .hero-text h2 {
+        min-height: 5rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        line-height: 0.5;
+        gap: 3px;
+        margin-bottom: 40px;
+    }
+
+    .static-txt {
+        display: block;
+        font-size: 1.2rem;
+        color: var(--text-muted);
+        font-weight: 500;
+    }
+
+    #typed-text {
+        color: var(--primary-color);
+        font-weight: 700;
+        font-size: 1.5rem;
+    }
+
+    .typed-cursor {
+        display: none !important;
+    }
 }
 
 /* --- SCROLL PROGRESS BAR --- */
@@ -1172,44 +1206,6 @@ body.light-theme .modal-footer {
 
 @keyframes anim {
     100% { width: 0; }
-}
-/* --- PROFESSIONAL MOBILE TYPING FIX --- */
-@media (max-width: 768px) {
-    .hero-text h2 {
-        /* උස ස්ථාවරව තැබීම */
-        min-height: 5rem; 
-        
-        /* අකුරු මැදට ගැනීම සහ පේළි දෙකකට කැඩීම */
-        display: flex;
-        flex-direction: column; /* මෙය දැම්මම 'I am' උඩටත්, Type වෙන එක යටටත් එයි */
-        justify-content: center;
-        align-items: center;
-        
-        /* පේළි පරතරය */
-        line-height: 0.5;
-        gap: 3px; 
-        
-        margin-bottom: 40px;
-    }
-
-    /* "I am" කොටස */
-    .static-txt {
-        display: block;
-        font-size: 1.2rem;
-        color: var(--text-muted);
-        font-weight: 500;
-    }
-
-    /* Type වෙන කොටස ලස්සනට පෙන්වීම */
-    #typed-text {
-        color: var(--primary-color); /* පාට වෙනස් කළා කැපී පෙනෙන්න */
-        font-weight: 700;
-        font-size: 1.5rem;
-    }
-    /* --- REMOVE TYPING CURSOR --- */
-.typed-cursor {
-    display: none !important;
-}
 }
 /* =========================================
    COMING SOON MODAL STYLES
@@ -1292,7 +1288,6 @@ body.light-theme .modal-footer {
 .cursor-dot { width: 8px; height: 8px; background-color: var(--primary-color); }
 .cursor-outline { width: 40px; height: 40px; border: 2px solid var(--primary-color); transition: width 0.2s, height 0.2s, background-color 0.2s; }
 body.hovering .cursor-outline { width: 60px; height: 60px; background-color: rgba(138, 43, 226, 0.1); border-color: transparent; }
-@media (max-width: 992px) { .cursor-dot, .cursor-outline { display: none; } }
 /* --- CALENDLY BUTTON STYLE --- */
 .calendly:hover {
     box-shadow: 0 10px 30px rgba(255, 165, 0, 0.2); /* Orange Shadow */
