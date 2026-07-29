@@ -48,7 +48,7 @@
     "@type": "Organization",
     "name": "Freelance / Open to Work"
   },
-  "alumniOf": { // alumniOf යනු Organization වර්ගයක් විය හැක
+  "alumniOf": {
     "@type": "EducationalOrganization",
     "name": "Cardiff Metropolitan University"
   },
@@ -59,15 +59,15 @@
   },
   "sameAs": [
     "https://www.linkedin.com/in/pasidu-madushanka-8b10b536b/",
-    "https://github.com/pasidumadushanka", // GitHub Profile එකක් එකතු කළා
+    "https://github.com/pasidumadushanka",
     "https://pasidumadushanka.github.io/pasidu.github.io/",
     "https://wa.me/94789701351"
   ],
   "knowsAbout": [
-    "Software Engineering", 
-    "Full Stack Development", 
-    "Mobile App Development", 
-    "Flutter", // වඩාත් නිශ්චිත තාක්ෂණික වචන එකතු කළා
+    "Software Engineering",
+    "Full Stack Development",
+    "Mobile App Development",
+    "Flutter",
     "Android Development",
     "Web Development",
     "React.js",
@@ -156,8 +156,8 @@
                     </div>
                     
                     <div class="social-icons">
-                        <a href="https://github.com/pasidumadushanka" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                        <a href="https://www.linkedin.com/in/pasindu-madushanka-8b10b536b" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://github.com/pasidumadushanka" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/pasindu-madushanka-8b10b536b" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
                         <a href="mailto:pasindumadu378@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
                     </div>
                 </div>
@@ -269,7 +269,7 @@ I’m thrilled to share one of my latest web development projects for Lassana Gl
                                 </div>
 
                                 <div class="links">
-                                    <button class="link-btn details" onclick="openModal(0.1)">
+                                    <button class="link-btn details" data-project-id="lassana-glow">
                                         <i class="fas fa-info-circle"></i> View Details
                                     </button>
                                     
@@ -300,7 +300,7 @@ I’m thrilled to share one of my latest web development projects for Lassana Gl
                                 </div>
 
                                 <div class="links">
-                                    <button class="link-btn details" onclick="openModal(1)">
+                                    <button class="link-btn details" data-project-id="luxevista">
                                         <i class="fas fa-info-circle"></i> View Details
                                     </button>
                                     
@@ -331,7 +331,7 @@ I’m thrilled to share one of my latest web development projects for Lassana Gl
                                 </div>
 
                                 <div class="links">
-                                    <button class="link-btn details" onclick="openModal(2)">
+                                    <button class="link-btn details" data-project-id="wellness">
                                         <i class="fas fa-info-circle"></i> View Details
                                     </button>
                                     
@@ -362,7 +362,7 @@ I’m thrilled to share one of my latest web development projects for Lassana Gl
                                 </div>
 
                                 <div class="links">
-                                    <button class="link-btn details" onclick="openModal(3)">
+                                    <button class="link-btn details" data-project-id="gadgethub">
                                         <i class="fas fa-info-circle"></i> View Details
                                     </button>
                                     
@@ -392,7 +392,7 @@ I’m thrilled to share one of my latest web development projects for Lassana Gl
                                 </div>
 
                                 <div class="links">
-                                    <button class="link-btn details" onclick="openModal(4)">
+                                    <button class="link-btn details" data-project-id="gym-perfect">
                                         <i class="fas fa-info-circle"></i> View Details
                                     </button>
                                     
@@ -423,7 +423,7 @@ I’m thrilled to share one of my latest web development projects for Lassana Gl
                                 </div>
 
                                 <div class="links">
-                                    <button class="link-btn details" onclick="openModal(5)">
+                                    <button class="link-btn details" data-project-id="medicare-plus">
                                         <i class="fas fa-info-circle"></i> View Details
                                     </button>
                                     
@@ -454,7 +454,7 @@ I’m thrilled to share one of my latest web development projects for Lassana Gl
                                 </div>
 
                                 <div class="links">
-                                    <button class="link-btn details" onclick="openModal(6)">
+                                    <button class="link-btn details" data-project-id="paddysmart">
                                         <i class="fas fa-info-circle"></i> View Details
                                     </button>
                                     
@@ -600,7 +600,7 @@ I’m thrilled to share one of my latest web development projects for Lassana Gl
                         <h3>Let's Connect</h3>
                         <p>Click on an icon below to contact me directly.</p>
                         
-                        <a href="https://wa.me/94789701351" target="_blank" class="social-btn whatsapp">
+                        <a href="https://wa.me/94789701351" target="_blank" rel="noopener noreferrer" class="social-btn whatsapp">
                             <div class="icon"><i class="fab fa-whatsapp"></i></div>
                             <div class="text">
                                 <span>Chat on</span>
@@ -616,7 +616,7 @@ I’m thrilled to share one of my latest web development projects for Lassana Gl
                             </div>
                         </a>
 
-                        <a href="https://github.com/pasidumadushanka" target="_blank" class="social-btn github">
+                        <a href="https://github.com/pasidumadushanka" target="_blank" rel="noopener noreferrer" class="social-btn github">
                             <div class="icon"><i class="fab fa-github"></i></div>
                             <div class="text">
                                 <span>View on</span>
@@ -624,13 +624,13 @@ I’m thrilled to share one of my latest web development projects for Lassana Gl
                             </div>
                         </a>
                         <!-- Calendly Button -->
-                        <div class="social-btn calendly" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/pasindumadushanka'});return false;">
+                        <button type="button" class="social-btn calendly" id="calendly-btn">
                             <div class="icon"><i class="fas fa-calendar-check"></i></div>
                             <div class="text">
-                             <span>Schedule a</span>
-                             <h4>Meeting</h4>
-                          </div>
-                      </div>
+                                <span>Schedule a</span>
+                                <h4>Meeting</h4>
+                            </div>
+                        </button>
                     </div>
 
                     <div class="contact-form glass" data-aos="fade-left">
@@ -682,10 +682,10 @@ I’m thrilled to share one of my latest web development projects for Lassana Gl
         
         <!-- Video Header -->
         <div class="modal-header">
-            <video id="modal-video" autoplay muted loop playsinline style="display: none; width: 100%; height: auto; border-radius: 20px;">
+            <video id="modal-video" class="hidden" autoplay muted loop playsinline>
                 <source src="" type="video/mp4">
             </video>
-            <img id="modal-image" src="" alt="Project preview" style="display:none; width:100%; height:auto; border-radius:20px; object-fit: cover;" />
+            <img id="modal-image" class="hidden" src="" alt="Project preview" />
             <div class="header-overlay"></div>
         </div>
 
@@ -725,7 +725,7 @@ I’m thrilled to share one of my latest web development projects for Lassana Gl
                 <div class="progress-bar"></div>
             </div>
             
-            <button class="btn btn-outline" onclick="closeComingSoon()">Got it!</button>
+            <button type="button" class="btn btn-outline" id="coming-soon-dismiss">Got it!</button>
         </div>
     </div>
 </div>
